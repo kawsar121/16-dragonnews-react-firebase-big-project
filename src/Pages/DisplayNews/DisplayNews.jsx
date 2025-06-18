@@ -12,7 +12,7 @@ const DisplayNews = () => {
     <p className="mt-4">{data.length} : News Show</p>
     <div className="flex flex-col gap-12">
         {
-            data.map(singleData=> <ShowData news={singleData}></ShowData>)
+            data.map(singleData=> <ShowData newsData={singleData}></ShowData>)
         }
     </div>
    </div>
