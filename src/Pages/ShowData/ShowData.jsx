@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const ShowData = ({ newsData }) => {
   return (
-    <div className=" max-w-md p-11 bg-base-100 shadow-xl">
+    <div className=" w-11/12 mx-auto max-w-md p-11 bg-base-100 shadow-xl">
       <figure>
         <img src={newsData.thumbnail_url} alt={newsData.title} className="w-80 h-80 mx-auto  object-cover" />
       </figure>

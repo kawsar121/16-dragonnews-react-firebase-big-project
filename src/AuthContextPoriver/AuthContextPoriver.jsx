@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, onAuthStateChanged,updateProfile ,signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import { auth } from "../Firebase/Firebase.init";
 
@@ -38,8 +38,8 @@ const AuthContextPoriver = ({children}) => {
     }
         
         //Update Profile
-    const profile = (uploadeProfile) =>{
-        return updateProfile(auth.currentUser, uploadeProfile)
+    const userUpdate = (update) =>{
+        return updateProfile(auth.currentUser, update)
     }
 
 
@@ -49,7 +49,8 @@ const AuthContextPoriver = ({children}) => {
         logOut,
         user,
         loading,
-        profile
+
+        userUpdate
     }
     return (
         <CreateNewContext.Provider value={info}>

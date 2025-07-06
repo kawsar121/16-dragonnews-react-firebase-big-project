@@ -17,6 +17,7 @@ import Register from './Components/Register/Register.jsx';
 import AuthContextPoriver from './AuthContextPoriver/AuthContextPoriver.jsx';
 import NewsDetails from './Pages/NewsDetails.jsx';
 import Private from './PrivateRoute/Private.jsx';
+import Footer from './Components/Footer/Footer.jsx';
 
 
 
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
         loader: ({params})=> fetch(`https://openapi.programming-hero.com/api/news/category/${params.id}`)
       },
     ],
+  },
+  {
+    path:'/footer',
+    element: <Footer></Footer>
   },
   {
     path: "/auth",

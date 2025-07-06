@@ -10,22 +10,17 @@ const Register = () => {
         const name = e.target.name.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
-        const photo = e.target.photo.value;
-        console.log(name,email,password,photo)
+        console.log(name,email,password)
 
         register(email,password)
-        .then(result =>{
+        .then(result=>{
             console.log(result.user)
-            profile({displayName:name, photoURL:photo})
-            .then(()=>{
-              navigate("/")
-            })
-            .cathch(error=>{
-              console.log(error)
-            })
+            e.target.reset()
+            navigate('/')
         })
         .catch(error=>{
             console.log(error.message)
+            alert(error.message)
         })
     }
     
@@ -39,15 +34,6 @@ const Register = () => {
                 type="text"
                 placeholder="Name"
                 name="name"
-                className="input input-bordered"
-                required
-              />
-            </div>
-            <div className="form-control">
-              <input
-                type="url"
-                placeholder="Photo Url"
-                name="photo"
                 className="input input-bordered"
                 required
               />
@@ -76,10 +62,10 @@ const Register = () => {
               </label>
             </div>
             <div className="form-control mt-3">
-              <button className="btn btn-primary">Login</button>
+              <button className="btn btn-primary">Submit</button>
             </div>
           </form>
-          <p>You have aleready an account <Link to="/auth/login" className="text-red-500">login</Link></p>
+          <p>You have aleready an account <Link to="/auth/login" className="text-red-500">Login</Link></p>
         </div>
     );
 };

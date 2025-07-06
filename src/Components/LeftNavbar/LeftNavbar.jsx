@@ -12,11 +12,11 @@ const LeftNavbar = () => {
 
     return (
         <div>
-             <h1 className="font-bold text-black text-2xl">All Categorys {iteam.length}</h1> 
+             <h1 className="font-bold text-black text-2xl">All Categorys</h1> 
              
            <div className="flex flex-col gap-3 mt-2 text-black">
             {
-                iteam.map((cat) => <NavLink to={`/cat/${cat.category_id}`} className="btn btn-soft" 
+                iteam.map((cat) => <NavLink to={`/cat/${cat.category_id}`} className="bg-slate-950 text-white lg:p-2 sm:p-1" 
                                      key={cat.category_id}>
                                      {cat.category_name}
                                    </NavLink>)   

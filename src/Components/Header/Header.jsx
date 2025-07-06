@@ -14,9 +14,9 @@ const Header = () => {
         <div className="bg-red-500 px-2 py-1 font-mono font-bold flex items-center ">
             <Link to="/">Latest</Link>
         </div>
-        <Marquee className="bg-gray-600 text-black p-4">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, quam.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, quam.</p>
+        <Marquee className="bg-gray-600 text-black lg:p-4 sm:px-5">
+            <p>Kawsar are working to create this page.</p>
+            <p>Website name The Dragon News</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, quam.</p>
         </Marquee>
       </div>

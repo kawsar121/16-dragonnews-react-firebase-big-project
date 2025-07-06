@@ -1,5 +1,5 @@
 
-import { useContext, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { CreateNewContext } from "../../AuthContextPoriver/AuthContextPoriver";
 
@@ -7,6 +7,19 @@ const Login = () => {
   const navigate = useNavigate()
     const {login} = useContext(CreateNewContext);
     const[errors, setErrors] = useState()
+
+     //for demo pass copy
+          const emailCopy = useRef(null);
+          const passCopy = useRef(null);
+        
+          const handleDemoFill = () => {
+            if (emailCopy.current && passCopy.current) {
+              emailCopy.current.value = "kb12@gmail.com";
+              passCopy.current.value = "123456";
+            }
+          };
+
+
     const handleLogin = (e)=>{
         e.preventDefault()
         const email = e.target.email.value;
@@ -34,6 +47,7 @@ const Login = () => {
                 type="Email"
                 placeholder="email"
                 name="email"
+                ref={emailCopy}
                 className="input input-bordered"
                 required
               />
@@ -43,6 +57,7 @@ const Login = () => {
                 type="password"
                 placeholder="password"
                 name="password"
+                ref={passCopy}
                 className="input input-bordered"
                 required
               />
@@ -57,7 +72,21 @@ const Login = () => {
             </div>
           </form>
           <p>You have aleready no account <Link to="/auth/register" className="text-red-500">Register</Link></p>
-          
+          {/* Demo Copy */}
+        <div className="mt-5 text-sm text-gray-600">
+        <p>
+          Demo Email: <code className="font-mono">kb12@gmail.com</code>
+        </p>
+        <p>
+          Password: <code className="font-mono">123456</code>
+        </p>
+        <button
+          onClick={handleDemoFill}
+          className="mt-2 px-2 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+        >
+          Use Demo Credentials
+        </button>
+      </div>
         </div>
   );
 };

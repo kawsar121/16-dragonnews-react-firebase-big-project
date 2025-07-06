@@ -8,9 +8,8 @@ const DisplayNews = () => {
   console.log(data);
   return (
    <div>
-    <h1 className="text-5xl font-semibold text-black">Dragone News</h1>
-    <p className="mt-4">{data.length} : News Show</p>
-    <div className="flex flex-col gap-12">
+    <h1 className="text-5xl font-semibold text-black my-4">Dragone News</h1>
+    <div className="grid lg:grid-cols-2 gap-5 ">
         {
             data.map(singleData=> <ShowData newsData={singleData}></ShowData>)
         }

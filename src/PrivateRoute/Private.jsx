@@ -11,7 +11,7 @@ const Private = ({children}) => {
         return children
     }
     else{
-        alert("Bai Age Login Koren")
+        alert("Please login then see details news")
     }
     return (
         <Navigate to="/auth/login"></Navigate>
